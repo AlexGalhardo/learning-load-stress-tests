@@ -1,0 +1,99 @@
+org: alexgalhardo
+app: k6-serverless-api
+service: k6-serverless-api
+frameworkVersion: "3"
+
+plugins:
+  - serverless-plugin-typescript
+
+custom:
+  DynamoTableUsers: 'k6-users-${sls:stage}'
+  DynamoTableCheckouts: 'k6-checkouts-${sls:stage}'
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  stage: dev
+  region: us-east-1
+  environment:
+    DYNAMO_TABLE_USERS: ${self:custom.DynamoTableUsers}
+    DYNAMO_TABLE_CHECKOUTS: ${self:custom.DynamoTableCheckouts}
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            # - dynamodb:UpdateItem
+            # - dynamodb:DeleteItem
+          Resource:
+            - Fn::GetAtt: [ UsersTable, Arn ]
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            # - dynamodb:DeleteItem
+          Resource:
+            - Fn::GetAtt: [ CheckoutsTable, Arn ]
+
+functions:
+  createUser:
+    handler: src/functions.createUser
+    events:
+      - httpApi:
+          path: /user
+          method: post
+
+  checkout:
+    handler: src/functions.checkout
+    events:
+      - httpApi:
+          path: /checkout
+          method: post
+
+resources:
+  Resources:
+    UsersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.DynamoTableUsers}
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: email
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        GlobalSecondaryIndexes:
+        - IndexName: EmailIndex
+          KeySchema:
+            - AttributeName: email
+              KeyType: HASH
+          Projection:
+            ProjectionType: ALL
+          ProvisionedThroughput:
+            ReadCapacityUnits: 1
+            WriteCapacityUnits: 1
+    CheckoutsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.DynamoTableCheckouts}
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH

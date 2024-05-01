@@ -1,0 +1,10 @@
+{
+  "name": "learning-load-balancer-with-nginx",
+  "scripts": {
+	"attack:rest_postgres_api:get": "node run start-get-rest-postgres-api-ddos-attack.mjs",
+    "attack:rest_postgres_api:signup": "node run start-post-signup-rest-postgres-api-ddos-attack.mjs"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3"
+  }
+}

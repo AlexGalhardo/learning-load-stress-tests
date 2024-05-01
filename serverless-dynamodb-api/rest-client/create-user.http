@@ -1,0 +1,8 @@
+POST https://aws-id.execute-api.us-east-1.amazonaws.com/user
+content-type: application/json
+
+{
+	"name": "test vieira",
+	"email": "test.galhardo@gmail.com",
+	"password": "qwe123BR@123qwe123"
+}

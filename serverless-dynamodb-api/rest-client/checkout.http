@@ -1,0 +1,2 @@
+POST https://aws-id.execute-api.us-east-1.amazonaws.com/checkout
+content-type: application/json

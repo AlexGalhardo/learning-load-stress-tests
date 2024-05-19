@@ -13,7 +13,8 @@
   - Performance Benchmarks using diferent technologies and databases
 
 - Technologies:
-  - [NodeJS v20](https://nodejs.org/en)
+  - [NodeJS](https://nodejs.org/en)
+  - [Bun](https://bun.sh/)
   - [TypeScript](https://www.typescriptlang.org/)
   - [Express REST API](https://expressjs.com/)
   - [MongoDB](https://www.mongodb.com/)
@@ -21,9 +22,9 @@
   - [Prisma ORM](https://www.prisma.io/)
   - [Redis](https://redis.io/)
   - [Docker](https://www.docker.com/)
-  - [JSON-RPC](https://www.docker.com/)
+  - [JSON-RPC](https://www.jsonrpc.org/)
   - [NGINX](https://www.nginx.com/)
-  - [ApolloGraphQL](https://www.apollographql.com/)
+  - [GraphQL](https://graphql.org/)
   - [Serverless Framework](https://www.serverless.com/)
   - [AWS](https://aws.amazon.com/)
      - [Lambda](https://aws.amazon.com/lambda/)
@@ -56,6 +57,7 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/f0382
 - Install NodeJS: https://nodejs.org/en/download/package-manager
 - Install Docker & Docker Compose: https://docs.docker.com/engine/install/
 - Have an AWS Account: https://aws.amazon.com/free/
+- Have an MongoDB Atlas Account: https://www.mongodb.com/cloud/atlas/register
 
 ## Up API Servers
 - Enter the API folder you wanna test and follow README.md instructions

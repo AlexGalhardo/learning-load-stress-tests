@@ -17,7 +17,7 @@ brew install k6
 ```
 
 ```bash
-k6 run load-test-create-user.js
+k6 run load-test-signup.js
 ```
 
 ```bash

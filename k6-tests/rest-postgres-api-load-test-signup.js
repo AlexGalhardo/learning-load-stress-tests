@@ -9,7 +9,7 @@ import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporte
 
 export function handleSummary(data) {
   return {
-    "./reports/rest-postgres-api-load-test-create-user.html": htmlReport(data),
+    "./reports/rest-postgres-api-load-test-signup.html": htmlReport(data),
   };
 }
 
@@ -23,7 +23,7 @@ export const options = {
 }
 
 export default function () {
-  const url = 'http://localhost:3333/create-user' // rest-postgres-api
+  const url = 'http://localhost:3333/signup'
 
   const headers = {
     'headers': {

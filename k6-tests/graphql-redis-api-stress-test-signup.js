@@ -9,7 +9,7 @@ import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporte
 
 export function handleSummary(data) {
   return {
-    "./reports/graphql-redis-api-stress-test-create-user.html": htmlReport(data),
+    "./reports/graphql-redis-api-stress-test-signup.html": htmlReport(data),
   };
 }
 

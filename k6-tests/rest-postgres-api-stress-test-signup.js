@@ -9,19 +9,19 @@ import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporte
 
 export function handleSummary(data) {
   return {
-    "./reports/serverless-dynamodb-api-stress-test-create-user.html": htmlReport(data),
+    "./reports/rest-postgres-api-stress-test-signup.html": htmlReport(data),
   };
 }
 
 export const options = {
   stages: [
-    { duration: '3s', target: 10 },
-    { duration: '5s', target: 20 },
-    { duration: '7s', target: 30 },
-    { duration: '10s', target: 50 },
-    { duration: '7s', target: 40 },
-    { duration: '5s', target: 20 },
-    { duration: '3s', target: 0 },
+    { duration: '3s', target: 3 },
+    { duration: '5s', target: 5 },
+    { duration: '7s', target: 7 },
+    { duration: '10s', target: 10 },
+    { duration: '7s', target: 7 },
+    { duration: '5s', target: 5 },
+    { duration: '3s', target: 3 },
   ],
   thresholds: {
     http_req_duration: ['p(95)<2000'], // 95% das requisicoes devem responder em até 2s
@@ -30,7 +30,7 @@ export const options = {
 }
 
 export default function () {
-  const url = 'https://id.execute-api.us-east-1.amazonaws.com/user' // serverless-dynamodb-api
+  const url = 'http://localhost:3333/signup';
 
   const headers = {
     'headers': {

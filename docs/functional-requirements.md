@@ -1,6 +1,6 @@
 ## 🔖 Functional Requirements Example
 
-### ./tests/test-create-user.js
+### ./tests/test-signup.js
 
 - [ ] Must return the id when registering a new user
 - [ ] Must return 201 when registering a new user

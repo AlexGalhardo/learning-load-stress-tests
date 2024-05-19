@@ -9,7 +9,7 @@ import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporte
 
 export function handleSummary(data) {
 	return {
-		"./reports/serverless-dynamodb-api-load-test-create-user.html": htmlReport(data),
+		"./reports/serverless-dynamodb-api-load-test-signup.html": htmlReport(data),
 	};
 }
 

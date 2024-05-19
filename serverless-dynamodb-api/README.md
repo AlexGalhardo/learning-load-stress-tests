@@ -1,6 +1,6 @@
-# Serverless Framework API
+# Serverless DynamoDB API
 
-## Setup Serverless API
+## Local development setup
 
 ### Prerequisites
    - See: https://www.serverless.com/framework/docs/getting-started
@@ -13,7 +13,7 @@ git clone git@github.com:AlexGalhardo/learning-load-stress-tests.git
 
 2. Enter repository and install dependencies
 ```bash
-cd learning-load-stress-tests/serverless-dynamodb-api && npm install
+cd learning-load-stress-tests/serverless-dynamodb-api
 ```
 
 3. Install dependencies

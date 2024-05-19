@@ -4,7 +4,7 @@ import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporte
 
 export function handleSummary(data) {
   return {
-    "./reports/stress-test-checkout.html": htmlReport(data),
+    "./reports/rest-postgres-api-stress-test-checkout.html": htmlReport(data),
   };
 }
 

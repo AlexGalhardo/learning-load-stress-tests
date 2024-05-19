@@ -1,6 +1,6 @@
 ## 🔖 Non-Functional Requirements Example
 
-### ./tests/test-create-user.js
+### ./tests/test-signup.js
 
 - [ ] Successful registration must occur within 2 seconds
 - [ ] Unsuccessful registrations must occur within 2 seconds

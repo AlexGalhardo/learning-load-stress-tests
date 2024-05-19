@@ -1,11 +1,9 @@
-version: '3'
-
 services:
   postgres:
-    container_name: k6-postgres
+    container_name: rest_postres_api_postgres
     image: postgres
     environment:
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: k6-postgres
+      POSTGRES_DB: rest_postres_api_postgres
     ports:
       - 5432:5432

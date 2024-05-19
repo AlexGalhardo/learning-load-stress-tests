@@ -9,7 +9,7 @@ import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporte
 
 export function handleSummary(data) {
   return {
-    "./reports/rest-postgres-api-stress-test-create-user.html": htmlReport(data),
+    "./reports/serverless-dynamodb-api-stress-test-signup.html": htmlReport(data),
   };
 }
 
@@ -30,7 +30,7 @@ export const options = {
 }
 
 export default function () {
-  const url = 'http://localhost:3333/create-user'; // rest-postgres-api
+  const url = 'https://id.execute-api.us-east-1.amazonaws.com/user' // serverless-dynamodb-api
 
   const headers = {
     'headers': {

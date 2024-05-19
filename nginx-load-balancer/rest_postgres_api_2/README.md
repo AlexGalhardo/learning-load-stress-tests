@@ -32,11 +32,11 @@ docker-compose up -d
 5. Create database with Prisma Migrations & Seed
 - Using Postgres:
   ```bash
-  npx prisma migrate dev && npx prisma db seed
+  bun prisma migrate dev && bun prisma db seed
   ```
 - Using MongoDB:
   ```bash
-  npx prisma db push && npx prisma db seed
+  npx prisma db push && bun prisma db seed
   ```
 
 6. Open Prisma Studio (Database GUI)

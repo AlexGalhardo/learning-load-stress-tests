@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   redis:
     image: redis:latest
@@ -66,8 +64,10 @@ services:
       - "3003:3000"
     networks:
       - network
-  
+
   rest_postgres_api_1:
+    depends_on:
+      - postgres
     container_name: rest_postgres_api_1
     build:
       context: ./rest_postgres_api_1
@@ -77,6 +77,8 @@ services:
       - network
 
   rest_postgres_api_2:
+    depends_on:
+      - postgres
     container_name: rest_postgres_api_2
     build:
       context: ./rest_postgres_api_2
@@ -86,6 +88,8 @@ services:
       - network
 
   rest_postgres_api_3:
+    depends_on:
+      - postgres
     container_name: rest_postgres_api_3
     build:
       context: ./rest_postgres_api_3

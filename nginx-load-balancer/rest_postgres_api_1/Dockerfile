@@ -5,5 +5,5 @@ RUN npm install
 COPY . .
 RUN cp .env.example .env
 RUN ./setup.sh
-EXPOSE 3333
+EXPOSE 4001
 CMD ["npm", "run", "dev"]

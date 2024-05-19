@@ -32,3 +32,8 @@ docker logs rest_postgres_api_1
 ```
 docker logs nginx -f
 ```
+
+## Build
+```
+sudo docker build -t rest_posgtes_api_teste .
+```

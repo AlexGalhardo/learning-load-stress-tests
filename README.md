@@ -69,7 +69,11 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/f0382
 - POST /checkout:
    - Check to increase ou add more stock units as you want in database while you are testing.
 
-## ⚠️ NOT COMPLETE ⚠️
+## Doing
+- [x] Finish REST Postgres API Tests
+- [x] Finish GraphQL Redis API Tests
+- [ ] Finish Serverless API Tests
+- [ ] Finish NGINX Load Balancer API Tests
 
 ## Load Tests
 - ### POST /signup
@@ -79,11 +83,6 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/f0382
       k6 run graphql-redis-api-load-test-signup.js
       ```
       - See report: [./k6-tests/reports/graphql-redis-api-load-test-signup.html](./k6-tests/reports/graphqL-redis-api-load-test-signup.html)
-   - Testing Serverless DynamoDB API:
-      ```bash
-      k6 run serverless-dynamodb-api-load-test-signup.js
-      ```
-      - See report: [./k6-tests/reports/serverless-dynamodb-api-load-test-signup.html](./k6-tests/reports/serverless-dynamodb-api-load-test-signup.html)
    - Testing REST Postgres API:
       ```bash
       k6 run rest-postgres-api-load-test-signup.js
@@ -97,11 +96,6 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/f0382
       k6 run graphql-redis-api-load-test-checkout.js
       ```
       - See report: [./k6-tests/reports/graphql-redis-api-load-test-checkout.html](./k6-tests/reports/graphql-redis-api-load-test-checkout.html)
-   - Testing Serverless DynamoDB API:
-      ```bash
-      k6 run serverless-dynamodb-api-load-test-checkout.js
-      ```
-      - See report: [./k6-tests/reports/serverless-dynamodb-api-load-test-checkout.html](./k6-tests/reports/serverless-dynamodb-api-load-test-checkout.html)
    - Testing REST Postgres API:
       ```bash
       k6 run rest-postgres-api-load-test-checkout.js
@@ -117,11 +111,6 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/f0382
       k6 run graphql-redis-api-stress-test-signup.js
       ```
       - See report: [./k6-tests/reports/graphql-redis-api-stress-test-signup.html](./k6-tests/reports/graphql-redis-api-stress-test-signup.html)
-   - Testing Serverless DynamoDB API:
-      ```bash
-      k6 run serverless-dynamodb-api-stress-test-signup.js
-      ```
-      - See report: [./k6-tests/reports/serverless-dynamodb-api-stress-test-signup.html](./k6-tests/reports/serverless-dynamodb-api-stress-test-signup.html)
    - Testing REST Postgres API:
       ```bash
       k6 run rest-postgres-api-stress-test-signup.js
@@ -135,11 +124,6 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/f0382
       k6 run graphql-redis-api-stress-test-checkout.js
       ```
       - See report: [./k6-tests/reports/graphql-redis-api-stress-test-checkout.html](./k6-tests/reports/graphql-redis-api-stress-test-checkout.html)
-   - Testing Serverless DynamoDB API:
-      ```bash
-      k6 run serverless-dynamodb-api-stress-test-checkout.js
-      ```
-      - See report: [./k6-tests/reports/serverless-dynamodb-api-stress-test-checkout.html](./k6-tests/reports/serverless-dynamodb-api-stress-test-checkout.html)
    - Testing REST Postgres API:
       ```bash
       k6 run rest-postgres-api-stress-test-checkout.js

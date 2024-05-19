@@ -34,13 +34,9 @@ export default class AuthController {
                 jwt_token_session: null,
             };
 
-            const jwt_token = jsonwebtoken.sign(
-                { userId: user.id, userEmail: user.email },
-                process.env.JWT_SECRET_KEY,
-                {
-                    expiresIn: "1h",
-                },
-            );
+            const jwt_token = jsonwebtoken.sign({ userId: user.id, userEmail: user.email }, Bun.env.JWT_SECRET_KEY, {
+                expiresIn: "1h",
+            });
 
             user.jwt_token_session = jwt_token;
 
@@ -73,11 +69,9 @@ export default class AuthController {
 
             if (!passwordMatch) return { success: false, message: "Email and/or password invalid" };
 
-            const jwt_token = jsonwebtoken.sign(
-                { userId: user.id, userEmail: user.email },
-                process.env.JWT_SECRET_KEY,
-                { expiresIn: "1h" },
-            );
+            const jwt_token = jsonwebtoken.sign({ userId: user.id, userEmail: user.email }, Bun.env.JWT_SECRET_KEY, {
+                expiresIn: "1h",
+            });
 
             user.jwt_token_session = jwt_token;
 

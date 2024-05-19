@@ -1,9 +1,9 @@
-import "dotenv/config";
 import { Elysia } from "elysia";
 import { apollo, gql } from "@elysiajs/apollo";
 import { cors } from "@elysiajs/cors";
 import AuthController from "./controllers/Auth.controller";
 import ToDoController from "./controllers/ToDo.controller";
+import CheckoutController from "./controllers/Checkout.controller";
 
 new Elysia()
     .use(
@@ -34,6 +34,14 @@ new Elysia()
                     jwt_token_session: String
                 }
 
+                type Product {
+                    id: ID!
+                    name: String!
+                    stock: Int!
+                    updated_at: String
+                    created_at: String
+                }
+
                 type authResponse {
                     success: Boolean!
                     user: User
@@ -44,6 +52,12 @@ new Elysia()
                     success: Boolean!
                     message: String
                     todo: ToDo
+                }
+
+                type checkoutResponse {
+                    success: Boolean!
+                    message: String
+                    product: Product
                 }
 
                 type allToDosResponse {
@@ -64,6 +78,7 @@ new Elysia()
                     newToDo(title: String!): toDoResponse
                     updateToDo(id: String!, title: String!, done: Boolean!): toDoResponse
                     deleteToDo(id: String!): toDoResponse
+                    checkout(productId: String!): checkoutResponse
                 }
             `,
             resolvers: {
@@ -76,6 +91,7 @@ new Elysia()
                         ToDoController.updateToDo(params, context),
                     deleteToDo: async (_, params, context: { authorization: string }) =>
                         ToDoController.deleteToDo(params, context),
+                    checkout: async (_, params, context) => CheckoutController.checkout(params),
                 },
                 Query: {
                     allToDos: async (_, __, context: { authorization: string }) => ToDoController.allToDos(context),
@@ -98,5 +114,5 @@ new Elysia()
         };
     })
     .listen(3000, () => {
-        console.log(`🦊 todo-graphql-api-using-redis is running at http://localhost:3000`);
+        console.log(`GraphQL Redis API running at http://localhost:3000/graphql`);
     });

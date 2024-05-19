@@ -1,0 +1,9 @@
+POST http://localhost:3000/graphql
+Content-Type: application/json
+
+{
+  "query": "mutation checkout($productId: String!) { checkout(productId: $productId) { success message product { id name stock updated_at created_at } } }",
+  "variables": {
+  	"productId": "53ae2078-5d7b-406f-8e12-e042ba096465"
+  }
+}

@@ -9,7 +9,7 @@ export default class ToDoController {
 
         if (!jwt_token) throw new Error("Header authorization token missing");
 
-        const decodedToken = jsonwebtoken.verify(jwt_token, process.env.JWT_SECRET_KEY) as {
+        const decodedToken = jsonwebtoken.verify(jwt_token, Bun.env.JWT_SECRET_KEY) as {
             userId: string;
             userEmail: string;
         };

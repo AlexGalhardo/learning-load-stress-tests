@@ -1,15 +1,10 @@
 import http from 'k6/http';
 import { sleep, check } from 'k6';
-import {
-	generateRandomFullName,
-	generateRandomEmail,
-	generateRandomPassword
-} from './utils/random.js';
 import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporter/main/dist/bundle.js";
 
 export function handleSummary(data) {
 	return {
-		"./reports/graphql-redis-api-load-test-signup.html": htmlReport(data),
+		"./reports/graphql-redis-api-load-test-checkout.html": htmlReport(data),
 	};
 }
 
@@ -31,24 +26,20 @@ export default function () {
 		}
 	};
 
-	const fullName = generateRandomFullName()
-
 	const payloadGraphql = JSON.stringify({
-		query: "mutation signup($name: String!, $email: String!, $password: String!) { signup(name: $name, email: $email, password: $password) { success message user { id name email password updated_at created_at jwt_token_session } } }",
+		query: "mutation checkout($productId: String!) { checkout(productId: $productId) { success message product { id name stock updated_at created_at } } }",
 		variables: {
-		name: fullName,
-		email: generateRandomEmail(fullName),
-		password: generateRandomPassword(12)
+		productId: "53ae2078-5d7b-406f-8e12-e042ba096465"
 		}
 	})
 
-	const res = http.post(url, payloadGraphql, headers);
+  	const res = http.post(url, payloadGraphql, headers);
 
 	const resBody = JSON.parse(res.body)
 	console.log(resBody)
 
 	check(res, {
 		'status should be 200': (r) => r.status === 200,
-		'success response should be true': (r) => resBody.data.signup.success === true,
+		'success response should be true': (r) => resBody.data.checkout.success === true,
 	});
 }

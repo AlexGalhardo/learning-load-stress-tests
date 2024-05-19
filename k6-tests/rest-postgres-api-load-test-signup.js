@@ -23,28 +23,29 @@ export const options = {
 }
 
 export default function () {
-  const url = 'http://localhost:3333/signup'
+	const url = 'http://localhost:3333/signup'
 
-  const headers = {
-    'headers': {
-      'Content-Type': 'application/json',
-    }
-  };
+	const headers = {
+		'headers': {
+		'Content-Type': 'application/json',
+		}
+	};
 
-  const fullName = generateRandomFullName()
+	const fullName = generateRandomFullName()
 
-  const payload = JSON.stringify({
-    name: fullName,
-    email: generateRandomEmail(fullName),
-    password: generateRandomPassword(12)
-  })
+	const payload = JSON.stringify({
+		name: fullName,
+		email: generateRandomEmail(fullName),
+		password: generateRandomPassword(12)
+	})
 
-  const res = http.post(url, payload, headers);
+	const res = http.post(url, payload, headers);
 
-  check(res, {
-    'status should be 201': (r) => r.status === 201,
-    'response success should be true': (r) => r.body.success === true
-  });
+	const resBody = JSON.parse(res.body)
+	console.log(resBody)
 
-  sleep(1) // sleep for 1 second
+	check(res, {
+		'status should be 201': (r) => r.status === 201,
+		'success response should be true': (r) => resBody.success === true,
+	});
 }

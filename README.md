@@ -72,9 +72,9 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/b1e1b
    - Enter folder [./k6-tests](./k6-tests/)
    - Testing GraphQL Redis API:
       ```bash
-      k6 run graphq-redis-api-load-test-signup.js
+      k6 run graphql-redis-api-load-test-signup.js
       ```
-      - See report: [./k6-tests/reports/graphq-redis-api-load-test-signup.html](./k6-tests/reports/graphq-redis-api-load-test-signup.html)
+      - See report: [./k6-tests/reports/graphql-redis-api-load-test-signup.html](./k6-tests/reports/graphqL-redis-api-load-test-signup.html)
    - Testing Serverless DynamoDB API:
       ```bash
       k6 run serverless-dynamodb-api-load-test-signup.js
@@ -90,9 +90,9 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/b1e1b
    - Enter folder [./tests](./k6-tests/)
    - Testing GraphQL Redis API:
       ```bash
-      k6 run graphq-redis-api-load-test-checkout.js
+      k6 run graphql-redis-api-load-test-checkout.js
       ```
-      - See report: [./k6-tests/reports/graphq-redis-api-load-test-checkout.html](./k6-tests/reports/graphq-redis-api-load-test-checkout.html)
+      - See report: [./k6-tests/reports/graphql-redis-api-load-test-checkout.html](./k6-tests/reports/graphql-redis-api-load-test-checkout.html)
    - Testing Serverless DynamoDB API:
       ```bash
       k6 run serverless-dynamodb-api-load-test-checkout.js
@@ -110,9 +110,9 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/b1e1b
    - Enter folder [./tests](./k6-tests/)
    - Testing GraphQL Redis API:
       ```bash
-      k6 run graphq-redis-api-stress-test-signup.js
+      k6 run graphql-redis-api-stress-test-signup.js
       ```
-      - See report: [./k6-tests/reports/graphq-redis-api-stress-test-signup.html](./k6-tests/reports/graphq-redis-api-stress-test-signup.html)
+      - See report: [./k6-tests/reports/graphql-redis-api-stress-test-signup.html](./k6-tests/reports/graphql-redis-api-stress-test-signup.html)
    - Testing Serverless DynamoDB API:
       ```bash
       k6 run serverless-dynamodb-api-stress-test-signup.js
@@ -128,9 +128,9 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/b1e1b
    - Enter folder [./tests](./k6-tests/)
    - Testing GraphQL Redis API:
       ```bash
-      k6 run graphq-redis-api-stress-test-checkout.js
+      k6 run graphql-redis-api-stress-test-checkout.js
       ```
-      - See report: [./k6-tests/reports/graphq-redis-api-stress-test-checkout.html](./k6-tests/reports/graphq-redis-api-stress-test-checkout.html)
+      - See report: [./k6-tests/reports/graphql-redis-api-stress-test-checkout.html](./k6-tests/reports/graphql-redis-api-stress-test-checkout.html)
    - Testing Serverless DynamoDB API:
       ```bash
       k6 run serverless-dynamodb-api-stress-test-checkout.js

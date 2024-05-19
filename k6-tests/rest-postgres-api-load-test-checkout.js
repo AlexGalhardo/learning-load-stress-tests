@@ -4,7 +4,7 @@ import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporte
 
 export function handleSummary(data) {
 	return {
-		"./reports/load-test-checkout.html": htmlReport(data),
+		"./reports/rest-postgres-api-load-test-checkout.html": htmlReport(data),
 	};
 }
 
@@ -28,11 +28,11 @@ export default function () {
 
 	const res = http.post(url, headers);
 
-	console.log('res => ', res.body);
+	const resBody = JSON.parse(res.body)
+	console.log(resBody)
 
 	check(res, {
-		'status should be 200': (r) => r.status === 200
+		'status should be 200': (r) => r.status === 200,
+		'success response should be true': (r) => resBody.success === true,
 	});
-
-	sleep(1) // sleep for 1 second
 }

@@ -25,19 +25,21 @@ export const options = {
 }
 
 export default function () {
-  const url = 'http://localhost:3333/checkout'; // rest-postgres-api
+	const url = 'http://localhost:3333/checkout'; // rest-postgres-api
 
-  const headers = {
-    'headers': {
-      'Content-Type': 'application/json',
-    }
-  };
+	const headers = {
+		'headers': {
+		'Content-Type': 'application/json',
+		}
+	};
 
-  const res = http.post(url, headers);
+	const res = http.post(url, headers);
 
-  console.log('res => ', res.body);
+	const resBody = JSON.parse(res.body)
+	console.log(resBody)
 
-  check(res, {
-    'status should be 200': (r) => r.status === 200
-  });
+	check(res, {
+		'status should be 200': (r) => r.status === 200,
+		'success response should be true': (r) => resBody.success === true,
+	});
 }

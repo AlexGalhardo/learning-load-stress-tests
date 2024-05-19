@@ -145,6 +145,12 @@
 <img width="1436" alt="Screenshot 2024-05-19 at 11 08 08" src="https://github.com/AlexGalhardo/api.nerdapi.com/assets/19540357/3454cfd9-7713-4393-ad18-8af07577e1bb">
 <img width="1436" alt="Screenshot 2024-05-19 at 11 07 57" src="https://github.com/AlexGalhardo/api.nerdapi.com/assets/19540357/162cd9bd-1ec9-4bae-a170-72934c9c8fd2">
 
+## Videos
+
+### Testing REST Postgres API
+
+[![video](http://img.youtube.com/vi/oDX-OHEqtac/0.jpg)](http://www.youtube.com/watch?v=oDX-OHEqtac "Learning Load & Stress Tests with K6 - REST Postgres API Signup & Checkout")
+
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)

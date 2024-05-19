@@ -40,11 +40,15 @@
 - [x] Test using REST API
 - [x] Test using Redis
 
-## Videos
+## Videos Demo
 
 ### Testing REST Postgres API
 
 https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/b1e1bf42-a661-4983-abee-994f9f2689d6
+
+### Testing GraphQL Redis API
+
+https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/f0382aad-c85d-4137-a958-449ead1cf491
 
 ## Prerequisites
 - Install k6: https://k6.io/docs/get-started/installation/
@@ -150,6 +154,10 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/b1e1b
 ### ./k6-tests/reports/rest-postgres-api-stress-test-checkout.html
 <img width="1436" alt="Screenshot 2024-05-19 at 11 08 08" src="https://github.com/AlexGalhardo/api.nerdapi.com/assets/19540357/3454cfd9-7713-4393-ad18-8af07577e1bb">
 <img width="1436" alt="Screenshot 2024-05-19 at 11 07 57" src="https://github.com/AlexGalhardo/api.nerdapi.com/assets/19540357/162cd9bd-1ec9-4bae-a170-72934c9c8fd2">
+
+### ./k6-tests/reports/graphql-redis-api-stress-test-checkout.html
+![Screenshot 2024-05-19 at 15 00 09](https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/ed5cc142-5552-42ec-9d17-d34139fd70b6)
+![Screenshot 2024-05-19 at 14 57 50](https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/1a2dfb5c-2bc1-453a-8564-d9aab392c6e2)
 
 ## License
 

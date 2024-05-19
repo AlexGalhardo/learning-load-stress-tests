@@ -20,40 +20,40 @@ export default class CheckoutController {
         }
     }
 
-	static async checkout(checkoutProductPayload: CheckoutProductDTO) {
-		const { productId } = checkoutProductPayload;
-		const productKey = `product:${productId}`;
+    static async checkout(checkoutProductPayload: CheckoutProductDTO) {
+        const { productId } = checkoutProductPayload;
+        const productKey = `product:${productId}`;
 
-		try {
-			const transaction = redis.multi();
-			transaction.watch(productKey);
-			const productData = await redis.get(productKey);
-			if (!productData) {
-				transaction.discard();
-				return { success: false, message: "Product not found" };
-			}
+        try {
+            const transaction = redis.multi();
+            transaction.watch(productKey);
+            const productData = await redis.get(productKey);
+            if (!productData) {
+                transaction.discard();
+                return { success: false, message: "Product not found" };
+            }
 
-			let productFound = JSON.parse(productData);
-			if (productFound.stock <= 0) {
-				transaction.discard();
-				return { success: false, message: "Product out of stock" };
-			}
+            let productFound = JSON.parse(productData);
+            if (productFound.stock <= 0) {
+                transaction.discard();
+                return { success: false, message: "Product out of stock" };
+            }
 
-			productFound.stock -= 1;
+            productFound.stock -= 1;
 
-			transaction.set(productKey, JSON.stringify(productFound));
+            transaction.set(productKey, JSON.stringify(productFound));
 
-			const result = await transaction.exec();
+            const result = await transaction.exec();
 
-			if (result === null) {
-				return { success: false, message: "Transaction failed, please try again" };
-			}
+            if (result === null) {
+                return { success: false, message: "Transaction failed, please try again" };
+            }
 
-			return { success: true, product: productFound };
-		} catch (error: any) {
-			return { success: false, message: error.message };
-		} finally {
-			await redis.unwatch();
-		}
-	}
+            return { success: true, product: productFound };
+        } catch (error: any) {
+            return { success: false, message: error.message };
+        } finally {
+            await redis.unwatch();
+        }
+    }
 }

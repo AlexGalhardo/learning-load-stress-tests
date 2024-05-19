@@ -1,5 +1,5 @@
 <div align="center">
-  <h1 align="center">Learning Load & Stress Tests</a>
+  <h1 align="center">:bomb: Learning Load & Stress Tests :bomb:</a>
 </div>
 
 ## Introduction
@@ -31,14 +31,14 @@
      - [API Gateway](https://aws.amazon.com/api-gateway/)
 
 ## ToDo
-- [x] Test using MongoDB
-- [x] Test using PostgreSQL
-- [x] Test using ServerlessFramework API and DynamoDB
-- [x] Test using Load Balancer
-- [x] Test using RPC API
-- [x] Test using GraphQL API
-- [x] Test using REST API
-- [x] Test using Redis
+- [x] API using MongoDB
+- [x] API using PostgreSQL
+- [x] API using ServerlessFramework API and DynamoDB
+- [x] API using Load Balancer
+- [x] API using RPC
+- [x] API using GraphQL
+- [x] API using REST
+- [x] API using Redis
 
 ## Videos Demo
 
@@ -69,9 +69,10 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/f0382
 - POST /checkout:
    - Check to increase ou add more stock units as you want in database while you are testing.
 
-## Doing
+## :warning: Doing :warning:
 - [x] Finish REST Postgres API Tests
 - [x] Finish GraphQL Redis API Tests
+- [ ] Finish JSON-RPC MongoDB API Tests
 - [ ] Finish Serverless API Tests
 - [ ] Finish NGINX Load Balancer API Tests
 

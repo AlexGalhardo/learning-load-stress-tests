@@ -40,7 +40,11 @@
 - [x] Test using REST API
 - [x] Test using Redis
 
-## ⚠️ NOT COMPLETE ⚠️
+## Videos
+
+### Testing REST Postgres API
+
+https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/b1e1bf42-a661-4983-abee-994f9f2689d6
 
 ## Prerequisites
 - Install k6: https://k6.io/docs/get-started/installation/
@@ -60,6 +64,8 @@
    - Tests are made using fake data, to not repeat the same signup
 - POST /checkout:
    - Check to increase ou add more stock units as you want in database while you are testing.
+
+## ⚠️ NOT COMPLETE ⚠️
 
 ## Load Tests
 - ### POST /signup
@@ -144,12 +150,6 @@
 ### ./k6-tests/reports/rest-postgres-api-stress-test-checkout.html
 <img width="1436" alt="Screenshot 2024-05-19 at 11 08 08" src="https://github.com/AlexGalhardo/api.nerdapi.com/assets/19540357/3454cfd9-7713-4393-ad18-8af07577e1bb">
 <img width="1436" alt="Screenshot 2024-05-19 at 11 07 57" src="https://github.com/AlexGalhardo/api.nerdapi.com/assets/19540357/162cd9bd-1ec9-4bae-a170-72934c9c8fd2">
-
-## Videos
-
-### Testing REST Postgres API
-
-[![video](http://img.youtube.com/vi/oDX-OHEqtac/0.jpg)](http://www.youtube.com/watch?v=oDX-OHEqtac "Learning Load & Stress Tests with K6 - REST Postgres API Signup & Checkout")
 
 ## License
 

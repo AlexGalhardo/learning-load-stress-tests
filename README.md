@@ -74,7 +74,7 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/f0382
 ## :warning: Doing :warning:
 - [x] Finish REST Postgres API Tests
 - [x] Finish GraphQL Redis API Tests
-- [ ] Finish JSON-RPC MongoDB API Tests
+- [x] Finish JSON-RPC MongoDB API Tests
 - [ ] Finish Serverless API Tests
 - [ ] Finish NGINX Load Balancer API Tests
 
@@ -91,9 +91,14 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/f0382
       k6 run rest-postgres-api-load-test-signup.js
       ```
       - See report: [./k6-tests/reports/rest-postgres-api-load-test-signup.html](./k6-tests/reports/rest-postgres-api-load-test-signup.html)
+   - Testing JSON-RPC MongoDB API:
+      ```bash
+      k6 run json-rpc-mongodb-api-load-test-signup.js
+      ```
+      - See report: [./k6-tests/reports/json-rpc-mongodb-api-load-test-signup.html](./k6-tests/reports/json-rpc-mongodb-api-load-test-signup.html)
 
 - ### POST /checkout (Last Stock Units - simulating a black friday):
-   - Enter folder [./tests](./k6-tests/)
+   - Enter folder [./k6-tests](./k6-tests/)
    - Testing GraphQL Redis API:
       ```bash
       k6 run graphql-redis-api-load-test-checkout.js
@@ -104,11 +109,16 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/f0382
       k6 run rest-postgres-api-load-test-checkout.js
       ```
       - See report: [./k6-tests/reports/rest-postgres-api-load-test-checkout.html](./k6-tests/reports/rest-postgres-api-load-test-checkout.html)
+   - Testing JSON-RPC MongoDB API:
+      ```bash
+      k6 run json-rpc-mongodb-api-load-test-checkout.js
+      ```
+      - See report: [./k6-tests/reports/json-rpc-mongodb-api-load-test-checkout.html](./k6-tests/reports/json-rpc-mongodb-api-load-test-checkout.html)
 
 
 ## Stress Tests
 - ### POST /signup
-   - Enter folder [./tests](./k6-tests/)
+   - Enter folder [./k6-tests](./k6-tests/)
    - Testing GraphQL Redis API:
       ```bash
       k6 run graphql-redis-api-stress-test-signup.js
@@ -119,9 +129,14 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/f0382
       k6 run rest-postgres-api-stress-test-signup.js
       ```
       - See report: [./k6-tests/reports/rest-postgres-api-stress-test-signup.html](./k6-tests/reports/rest-postgres-api-stress-test-signup.html)
+   - Testing JSON-RPC MongoDB API:
+      ```bash
+      k6 run json-rpc-mongodb-api-stress-test-signup.js
+      ```
+      - See report: [./k6-tests/reports/json-rpc-mongodb-api-stress-test-signup.html](./k6-tests/reports/json-rpc-mongodb-api-stress-test-signup.html)
 
 - ### POST /checkout (Last Stock Units - simulating a black friday):
-   - Enter folder [./tests](./k6-tests/)
+   - Enter folder [./k6-tests](./k6-tests/)
    - Testing GraphQL Redis API:
       ```bash
       k6 run graphql-redis-api-stress-test-checkout.js
@@ -132,6 +147,11 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/f0382
       k6 run rest-postgres-api-stress-test-checkout.js
       ```
       - See report: [./k6-tests/reports/rest-postgres-api-stress-test-checkout.html](./k6-tests/reports/rest-postgres-api-stress-test-checkout.html)
+   - Testing JSON-RPC MongoDB API:
+      ```bash
+      k6 run json-rpc-mongodb-api-stress-test-checkout.js
+      ```
+      - See report: [./k6-tests/reports/json-rpc-mongodb-api-stress-test-checkout.html](./k6-tests/reports/json-rpc-mongodb-api-stress-test-checkout.html)
 
 ## K6 Reports Examples
 

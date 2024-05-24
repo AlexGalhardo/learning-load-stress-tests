@@ -22,8 +22,9 @@ model Users {
 
 model Products {
   id          String @id @default(auto()) @map("_id") @db.ObjectId
+  product_id  String @unique
   name        String @unique @default("Test Product")
-  stock       Int    @default(10000)
+  stock       Int    @default(35000)
 
   updated_at DateTime @updatedAt
   created_at DateTime @default(now())

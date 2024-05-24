@@ -17,10 +17,11 @@ cd learning-load-stress-tests/json-rpc-mongodb-api
 cp .env.example .env
 ```
 - Dont forget to setup your MongoDB Atlas credentials in .env correctly
+- MongoDB in Docker-compose doesn't have replica set to use transactions. Prisma will crash.
 
 4. Run setup.sh
 ```bash
-./setup.sh
+chmod +x ./setup.sh && ./setup.sh
 ```
 
 5. Up JSON-RPC server

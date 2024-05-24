@@ -15,7 +15,7 @@ const jsonRPCServer: TypedJSONRPCServer<Methods> = new JSONRPCServer({
     },
 });
 
-jsonRPCServer.applyMiddleware(logMiddleware, exceptionMiddleware);
+// jsonRPCServer.applyMiddleware(logMiddleware, exceptionMiddleware);
 
 jsonRPCServer.addMethod("signup", async ({ name, email, password }) =>
     AuthController.signup({ name, email, password }),

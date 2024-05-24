@@ -33,14 +33,15 @@ export default class AuthController {
 
             const jwt_token = JwtToken.create(email);
 
+			let user = null
             await prisma.$transaction(async (trx) => {
-                const user = await trx.users.create({ data: { name, email, password, jwt_token } });
-
-                return {
-                    success: true,
-                    user,
-                };
+                user = await trx.users.create({ data: { name, email, password, jwt_token } });
             });
+
+			return {
+				success: true,
+				user,
+			};
         } catch (error) {
             return {
                 success: false,

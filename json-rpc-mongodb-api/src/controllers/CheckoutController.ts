@@ -1,12 +1,14 @@
 import { randomUUID } from "node:crypto";
 import { prisma } from "../config/prisma";
 import { faker } from "@faker-js/faker";
+import { DEFAULT_PRODUCT_ID } from "prisma/seed";
 
 export interface CheckoutControllerResponse {
     success: boolean;
     product?: any;
     message?: string;
 }
+
 interface CheckoutPayload {
     product_id: string;
 }
@@ -14,17 +16,17 @@ interface CheckoutPayload {
 export default class CheckoutController {
     static async checkout(checkoutPayload: CheckoutPayload): Promise<CheckoutControllerResponse> {
         try {
-            const { product_id } = checkoutPayload;
+            // const { product_id } = checkoutPayload;
 
-            const productExists = await prisma.products.findUnique({ where: { id: product_id } });
+			// const productExists = await prisma.products.findUnique({ where: { product_id: DEFAULT_PRODUCT_ID } });
 
-            if (!productExists) return { success: false, message: "Product not exists" };
+            // if (!productExists) return { success: false, message: "Product not exists" };
 
             let product = null;
             await prisma.$transaction(async (trx) => {
                 product = await trx.products.update({
                     where: {
-                        id: product_id,
+						product_id: DEFAULT_PRODUCT_ID,
                         stock: {
                             gt: 0,
                         },

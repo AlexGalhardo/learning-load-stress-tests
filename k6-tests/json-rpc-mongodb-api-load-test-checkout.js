@@ -4,7 +4,7 @@ import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporte
 
 export function handleSummary(data) {
 	return {
-		"./reports/graphql-redis-api-load-test-checkout.html": htmlReport(data),
+		"./reports/json-rpc-mongodb-api-load-test-checkout.html": htmlReport(data),
 	};
 }
 
@@ -18,7 +18,7 @@ export const options = {
 }
 
 export default function () {
-  	const url = 'http://localhost:3000/graphql'; // graphql-redis-api
+	const url = 'http://localhost:4444/checkout'; // json-rpc-mongodb-api
 
 	const headers = {
 		'headers': {
@@ -26,20 +26,22 @@ export default function () {
 		}
 	};
 
-	const payloadGraphql = JSON.stringify({
-		query: "mutation checkout($productId: String!) { checkout(productId: $productId) { success message product { id name stock updated_at created_at } } }",
-		variables: {
-		productId: "53ae2078-5d7b-406f-8e12-e042ba096465"
-		}
+	const payload = JSON.stringify({
+  		jsonrpc: "2.0",
+		id: 1,
+  		method: "checkout",
+  		params: {
+    		product_id: "91f2f7d6-4e3d-4ba3-b674-1168d0096755"
+  		}
 	})
 
-  	const res = http.post(url, payloadGraphql, headers);
+	const res = http.post(url, payload, headers);
 
 	const resBody = JSON.parse(res.body)
 	console.log(resBody)
 
 	check(res, {
 		'status should be 200': (r) => r.status === 200,
-		'success response should be true': (r) => resBody.data.checkout.success === true,
+		'success response should be true': (r) => resBody.result.success === true,
 	});
 }

@@ -18,5 +18,5 @@ express()
     .post("/login", async (req, res) => expressPostRequest(req, res))
     .post("/checkout", async (req, res) => expressPostRequest(req, res))
     .listen(Bun.env.PORT || 4444, () =>
-		console.log(`\n\nJSON RPC SERVER listening on http://localhost:${Bun.env.PORT || 4444}\n\n`),
+        console.log(`\n\nJSON RPC SERVER listening on http://localhost:${Bun.env.PORT || 4444}\n\n`),
     );

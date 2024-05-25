@@ -15,9 +15,10 @@
 - Technologies:
   - [NodeJS](https://nodejs.org/en)
   - [Bun](https://bun.sh/)
+  - [ElysiaJS](https://elysiajs.com/)
   - [TypeScript](https://www.typescriptlang.org/)
-  - [Express REST API](https://expressjs.com/)
   - [MongoDB](https://www.mongodb.com/)
+  - [Mongoose ODM](https://mongoosejs.com/)
   - [PosgreSQL](https://www.postgresql.org/)
   - [Prisma ORM](https://www.prisma.io/)
   - [Redis](https://redis.io/)
@@ -34,7 +35,7 @@
 ## ToDo
 - [x] API using MongoDB
 - [x] API using PostgreSQL
-- [x] API using ServerlessFramework API and DynamoDB
+- [x] API using Serverless Framework and DynamoDB
 - [x] API using Load Balancer
 - [x] API using RPC
 - [x] API using GraphQL
@@ -54,10 +55,9 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/f0382
 ## Prerequisites
 - Install k6: https://k6.io/docs/get-started/installation/
 - Install Bun: https://bun.sh/docs/installation
-- Install NodeJS: https://nodejs.org/en/download/package-manager
+- Install NodeJS >= v20: https://nodejs.org/en/download/package-manager
 - Install Docker & Docker Compose: https://docs.docker.com/engine/install/
 - Have an AWS Account: https://aws.amazon.com/free/
-- Have an MongoDB Atlas Account: https://www.mongodb.com/cloud/atlas/register
 
 ## Up API Servers
 - Enter the API folder you wanna test and follow README.md instructions
@@ -165,6 +165,11 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/f0382
 ### ./k6-tests/reports/graphql-redis-api-stress-test-checkout.html
 ![Screenshot 2024-05-19 at 15 00 09](https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/ed5cc142-5552-42ec-9d17-d34139fd70b6)
 ![Screenshot 2024-05-19 at 14 57 50](https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/1a2dfb5c-2bc1-453a-8564-d9aab392c6e2)
+
+### /k6-tests/reports/json-rpc-mongodb-api-stress-test-checkout.html
+![Screenshot 2024-05-25 at 11 39 00](https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/d21e0afb-5ec8-41e5-b1f0-3fb3f128cfcf)
+![Screenshot 2024-05-25 at 11 38 50](https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/3767120e-7ab2-4b25-80d6-52fe15757408)
+![Screenshot 2024-05-25 at 11 38 36](https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/f351d7c7-03e8-47c7-bf5c-a2c479cafa7f)
 
 ## License
 

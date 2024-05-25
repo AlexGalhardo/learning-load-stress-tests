@@ -14,7 +14,7 @@ cd learning-load-stress-tests/rest-postgres-api
 
 3. Run setup.sh
 ```bash
-./setup.sh
+chmod +x ./setup.sh && ./setup.sh
 ```
 
 4. Up development server

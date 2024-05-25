@@ -12,26 +12,9 @@ git clone git@github.com:AlexGalhardo/learning-load-stress-tests.git
 cd learning-load-stress-tests/json-rpc-mongodb-api
 ```
 
-3. Create .env
-```bash
-cp .env.example .env
-```
-- Dont forget to setup your MongoDB Atlas credentials in .env correctly
-- MongoDB in Docker-compose doesn't have replica set to use transactions. Prisma will crash.
-
-4. Run setup.sh
+3. Run setup.sh
 ```bash
 chmod +x ./setup.sh && ./setup.sh
-```
-
-5. Up JSON-RPC server
-```bash
-bun run dev
-```
-
-6. Run client requests
-```bash
-bun run client
 ```
 
 ## [Single-file executable](https://bun.sh/docs/bundler/executables)

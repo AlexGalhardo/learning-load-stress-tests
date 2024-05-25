@@ -14,7 +14,7 @@ cd learning-load-stress-tests/graphql-redis-api
 
 3. Run setup.sh
 ```
-./setup.sh
+chmod +x ./setup.sh && ./setup.sh
 ```
 
 4. Go to: [http://localhost:3000/graphql](http://localhost:3000/graphql)

@@ -155,18 +155,18 @@ https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/f0382
 
 ## K6 Reports Examples
 
-### ./k6-tests/reports/rest-postgres-api-stress-test-signup.html
+### [./k6-tests/reports/rest-postgres-api-stress-test-signup.html](./k6-tests/reports/rest-postgres-api-stress-test-signup.html)
 <img width="1438" alt="Screenshot 2024-05-19 at 10 51 47" src="https://github.com/AlexGalhardo/api.nerdapi.com/assets/19540357/c5c5c8be-c203-475d-a08a-8607416061e3">
 
-### ./k6-tests/reports/rest-postgres-api-stress-test-checkout.html
+### [./k6-tests/reports/rest-postgres-api-stress-test-checkout.html](./k6-tests/reports/rest-postgres-api-stress-test-checkout.html)
 <img width="1436" alt="Screenshot 2024-05-19 at 11 08 08" src="https://github.com/AlexGalhardo/api.nerdapi.com/assets/19540357/3454cfd9-7713-4393-ad18-8af07577e1bb">
 <img width="1436" alt="Screenshot 2024-05-19 at 11 07 57" src="https://github.com/AlexGalhardo/api.nerdapi.com/assets/19540357/162cd9bd-1ec9-4bae-a170-72934c9c8fd2">
 
-### ./k6-tests/reports/graphql-redis-api-stress-test-checkout.html
+### [./k6-tests/reports/graphql-redis-api-stress-test-checkout.html](./k6-tests/reports/graphql-redis-api-stress-test-checkout.html)
 ![Screenshot 2024-05-19 at 15 00 09](https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/ed5cc142-5552-42ec-9d17-d34139fd70b6)
 ![Screenshot 2024-05-19 at 14 57 50](https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/1a2dfb5c-2bc1-453a-8564-d9aab392c6e2)
 
-### /k6-tests/reports/json-rpc-mongodb-api-stress-test-checkout.html
+### [./k6-tests/reports/json-rpc-mongodb-api-stress-test-checkout.html](./k6-tests/reports/json-rpc-mongodb-api-stress-test-checkout.html)
 ![Screenshot 2024-05-25 at 11 39 00](https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/d21e0afb-5ec8-41e5-b1f0-3fb3f128cfcf)
 ![Screenshot 2024-05-25 at 11 38 50](https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/3767120e-7ab2-4b25-80d6-52fe15757408)
 ![Screenshot 2024-05-25 at 11 38 36](https://github.com/AlexGalhardo/learning-load-stress-tests/assets/19540357/f351d7c7-03e8-47c7-bf5c-a2c479cafa7f)

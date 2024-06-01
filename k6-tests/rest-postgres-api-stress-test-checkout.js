@@ -27,13 +27,7 @@ export const options = {
 export default function () {
 	const url = 'http://localhost:3333/checkout'; // rest-postgres-api
 
-	const headers = {
-		'headers': {
-		'Content-Type': 'application/json',
-		}
-	};
-
-	const res = http.post(url, headers);
+	const res = http.post(url);
 
 	const resBody = JSON.parse(res.body)
 	console.log(resBody)

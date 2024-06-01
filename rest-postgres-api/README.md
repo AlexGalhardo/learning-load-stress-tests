@@ -17,12 +17,10 @@ cd learning-load-stress-tests/rest-postgres-api
 chmod +x ./setup.sh && ./setup.sh
 ```
 
-4. Up development server
+## PM2 Monit
 ```bash
-bun run dev
+bunx pm2 monit
 ```
-
-5. Verify API endpoint: http://localhost:3333
 
 ## API
 - You can see the HTTP Requests references inside folder [./rest-client](./rest-client)

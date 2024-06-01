@@ -1,2 +1,1 @@
 POST http://localhost:3333/checkout
-content-type: application/json

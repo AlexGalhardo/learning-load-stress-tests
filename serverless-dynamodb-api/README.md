@@ -24,8 +24,8 @@ npm install
 4. Don't forget to setup your AWS credentials locally (prerequisites) to be able to access DynamoDB in AWS
 Example in MacOS terminal:
 ```bash
-export AWS_ACCESS_KEY_ID=AKIA4BFL2BWAHUVZ45E6
-export AWS_SECRET_ACCESS_KEY=ZYZQ5xu1Ffu0Ybi/v5B6i5Y4l2LgssFjCInBLnfX
+export AWS_ACCESS_KEY_ID=YOU_AWS_ACCESS_KEY_ID
+export AWS_SECRET_ACCESS_KEY=YOUR_AWS_ACCESS_KEY_ID
 ```
 
 5. Up server locally

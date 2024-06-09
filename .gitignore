@@ -44,3 +44,6 @@ package-lock.json
 .env
 .serverless/
 .zshrc
+
+.build
+.esbuild

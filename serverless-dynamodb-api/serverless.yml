@@ -1,14 +1,25 @@
 org: alexgalhardo
-app: k6-serverless-api
-service: k6-serverless-api
+app: serverless-dynamodb-api
+service: serverless-dynamodb-api
 frameworkVersion: "3"
 
 plugins:
+  - serverless-esbuild
+  - serverless-offline
   - serverless-plugin-typescript
 
 custom:
   DynamoTableUsers: 'k6-users-${sls:stage}'
   DynamoTableCheckouts: 'k6-checkouts-${sls:stage}'
+
+  esbuild:
+    exclude: []
+    sourcemap: true
+    watch:
+      pattern: "src/**/*"
+
+  serverless-offline:
+    noPrependStageInUrl: true
 
 provider:
   name: aws
@@ -16,6 +27,7 @@ provider:
   stage: dev
   region: us-east-1
   environment:
+    # WORKSPACE: dev
     DYNAMO_TABLE_USERS: ${self:custom.DynamoTableUsers}
     DYNAMO_TABLE_CHECKOUTS: ${self:custom.DynamoTableCheckouts}
   iam:

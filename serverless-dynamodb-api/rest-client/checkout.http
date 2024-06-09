@@ -1,2 +1,3 @@
-POST https://aws-id.execute-api.us-east-1.amazonaws.com/checkout
+POST https://id_here.execute-api.us-east-1.amazonaws.com/checkout
+# POST http://localhost:3000/checkout
 content-type: application/json

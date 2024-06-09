@@ -1,15 +1,10 @@
 import http from 'k6/http';
 import { check } from 'k6';
-import {
-	generateRandomFullName,
-	generateRandomEmail,
-	generateRandomPassword
-} from './utils/random.js';
 import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporter/main/dist/bundle.js";
 
 export function handleSummary(data) {
 	return {
-		"./reports/serverless-dynamodb-api-load-test-signup.html": htmlReport(data),
+		"./reports/serverless-dynamodb-api-load-test-checkout.html": htmlReport(data),
 	};
 }
 
@@ -23,7 +18,7 @@ export const options = {
 }
 
 export default function () {
-	const url = 'https://id_here.execute-api.us-east-1.amazonaws.com/user' // serverless-dynamodb-api
+	const url = 'https://id_here.execute-api.us-east-1.amazonaws.com/checkout' // serverless-dynamodb-api
 
 	const headers = {
 		'headers': {
@@ -31,15 +26,7 @@ export default function () {
 		}
 	};
 
-	const fullName = generateRandomFullName()
-
-	const payload = JSON.stringify({
-		name: fullName,
-		email: generateRandomEmail(fullName),
-		password: generateRandomPassword(12)
-	})
-
-	const res = http.post(url, payload, headers);
+	const res = http.post(url, headers);
 
 	const resBody = JSON.parse(res.body)
 	console.log(resBody)

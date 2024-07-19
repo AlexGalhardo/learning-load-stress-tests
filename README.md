@@ -4,7 +4,7 @@
 
 ## Introduction
 
-- A personal project I created to learn and improve my skills in:
+- A side project I created to learn and improve my skills in:
   - [k6](https://k6.io/)
   - Load Tests & Stress Tests
   - Load Balancer
